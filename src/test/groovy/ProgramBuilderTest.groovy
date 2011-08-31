@@ -61,4 +61,19 @@ class ProgramBuilderTest extends GroovyTestCase {
 		
 		assert "FFLFFLFFLFFL" == robot.toString()
 	}
+	
+	public void testThatNestedProgramsCanBeDescribed() {
+		Program program = builder.do(4) {
+			builder.do(2) {
+				builder.forward()
+				builder.left()
+			}
+			builder.forward()
+			builder.right()
+		}
+		
+		program.executeWith(robot)
+		
+		assert "FLFLFRFLFLFRFLFLFRFLFLFR" == robot.toString()
+	}
 }
