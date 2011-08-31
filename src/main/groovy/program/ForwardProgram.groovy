@@ -1,29 +1,18 @@
 package program
 
 import robot.Robot
+import program.AbstractProgram
 
-class ForwardProgram implements Program {
-	private int repeatCount
-	
+class ForwardProgram extends AbstractProgram implements Program {
 	public ForwardProgram() {
 		this(1)
 	}
 	
 	public ForwardProgram(int repeatCount) {
-		this.repeatCount = repeatCount
+		super(repeatCount)
 	}
-	
-	protected Range repeat() {
-		return (1..repeatCount)
-	}
-	
-	public void executeWith(Robot robot) {
-		repeat().each {
-			basicExecuteWith(robot);
-		}
-	}
-	
-	protected final basicExecuteWith(Robot robot) {
+		
+	protected final void basicExecuteWith(Robot robot) {
 		robot.executeCommand(0x37);
 	}
 }
