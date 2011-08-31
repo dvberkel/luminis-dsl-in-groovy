@@ -57,4 +57,12 @@ class ProgramTest extends GroovyTestCase {
 		
 		assert "R" == robot.toString()
 	}
+	
+	public void testThatForwardProgramCanBeConstructedWithAMultiplier() {
+		Program program = new ForwardProgram(3)
+		
+		program.executeWith(robot)
+		
+		assert "FFF" == robot.toString()
+	}
 }
