@@ -5,6 +5,7 @@ import groovy.util.GroovyTestCase
 import program.Program
 import program.ForwardProgram
 import program.LeftProgram
+import program.RightProgram
 import robot.Robot
 import robot.LoggerRobot
 
@@ -41,5 +42,19 @@ class ProgramTest extends GroovyTestCase {
 		program.executeWith(robot)
 		
 		assert "L" == robot.toString()
+	}
+
+	public void testThatRightProgramExists() {
+		Program program = new RightProgram()
+
+		assert program != null
+	}
+	
+	public void testThatRightProgramExecutesCorrectly() {
+		Program program = new RightProgram()
+		
+		program.executeWith(robot)
+		
+		assert "R" == robot.toString()
 	}
 }
