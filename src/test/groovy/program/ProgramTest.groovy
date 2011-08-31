@@ -6,6 +6,7 @@ import program.Program
 import program.ForwardProgram
 import program.LeftProgram
 import program.RightProgram
+import program.DoProgram
 import robot.Robot
 import robot.LoggerRobot
 
@@ -81,5 +82,20 @@ class ProgramTest extends GroovyTestCase {
 		
 		assert "RR" == robot.toString()
 	}
-
+	
+	public void testThatDoProgramExists() {
+		Program program = new DoProgram()
+		
+		assert program != null
+	}
+	
+	public void testThatDoProgramExecutesCorrectly() {
+		DoProgram program = new DoProgram(2)
+		
+		program.add(new ForwardProgram(2))
+		program.add(new LeftProgram())
+		program.executeWith(robot)
+		
+		assert "FFLFFL" == robot.toString()
+	}
 }
