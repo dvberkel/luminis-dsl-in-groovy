@@ -1,9 +1,18 @@
 package program
 
 import robot.Robot
+import program.AbstractProgram
 
-class LeftProgram implements Program {
-	public void executeWith(Robot robot) {
+class LeftProgram extends AbstractProgram implements Program {
+	public LeftProgram() {
+		this(1)
+	}
+	
+	public LeftProgram(int repeatCount) {
+		super(repeatCount)
+	}
+	
+	protected final void basicExecuteWith(Robot robot) {
 		robot.executeCommand(0x51);
 	}
 }
