@@ -30,4 +30,35 @@ class ProgramBuilderTest extends GroovyTestCase {
 		
 		assert "" == robot.toString()
 	}
+	
+	public void testThatAForwardProgramCanBeDescribed() {
+		Program program = builder.do() {
+			builder.forward()
+		}
+		
+		program.executeWith(robot)
+		
+		assert "F" == robot.toString()
+	}
+	
+	public void testThatMultipleLeftProgramCanBeDescribed() {
+		Program program = builder.do() {
+			builder.left(2)
+		}
+		
+		program.executeWith(robot)
+		
+		assert "LL" == robot.toString()
+	}
+	
+	public void testThatChainedProgramsCanBeDescribed() {
+		Program program = builder.do(4) {
+			builder.forward(2)
+			builder.left()
+		}
+		
+		program.executeWith(robot)
+		
+		assert "FFLFFLFFLFFL" == robot.toString()
+	}
 }
