@@ -18,7 +18,7 @@ class ProgramTest extends GroovyTestCase {
 	public void testThatForwardProgramExists() {
 		Program program = new ForwardProgram()
 
-		assert program != null;
+		assert program != null
 	}
 	
 	public void testThatForwardProgramExecutesCorrectly() {
@@ -26,12 +26,20 @@ class ProgramTest extends GroovyTestCase {
 		
 		program.executeWith(robot)
 		
-		assert "F" == robot.toString();
+		assert "F" == robot.toString()
 	}
 
 	public void testThatLeftProgramExists() {
 		Program program = new LeftProgram()
 
-		assert program != null;
+		assert program != null
+	}
+	
+	public void testThatLeftProgramExecutesCorrectly() {
+		Program program = new LeftProgram()
+		
+		program.executeWith(robot)
+		
+		assert "L" == robot.toString()
 	}
 }
