@@ -37,7 +37,4 @@ class ProgramBuilder extends BuilderSupport {
     protected Object createNode(Object name, Map attributes){}
     
     protected Object createNode(Object name, Map attributes, Object value){}
-    
-    protected void nodeCompleted(Object parent, Object node) {}
-
 }
