@@ -1,10 +1,10 @@
 DSL in Groovy
 =============
 
-This project accompanies a article on the 
-[Luminis Developer blog](http://lsd.luminis.eu/blog/ "The Luminis Corporate Blog")
+This project accompanies an article on the 
+[Luminis Developer blog](http://lsd.luminis.eu/blog/ "The Luminis Corporate Blog").
 
-Specifically [Domain Specific Languages in Groovy](http://lsd.luminis.eu/domain-specific-languages-in-groovy/ "DSL in Groovy")
+Specifically [Domain Specific Languages in Groovy](http://lsd.luminis.eu/domain-specific-languages-in-groovy/ "DSL in Groovy").
 
 Running a Test
 --------------
@@ -12,7 +12,7 @@ Running a Test
 Use the following command to run a test. It is assumped that groovy is installed
 and present on the path.
 
-    groovy -cp src/main/groovy file
+    groovy -cp src/main/groovy <file>
 
 For example
 
